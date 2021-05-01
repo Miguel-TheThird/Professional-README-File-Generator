@@ -19,13 +19,13 @@ It includes all the important aspects that a good readme.md file should include,
 
 ## Installation:
 
-Create a `package.json` with require dependencies by installing:
+Create a `package.json` with required dependencies by installing:
 
 ```bash
 npm init -y
 ```
 
-Add inquirer to your list of dependencies by running this code:
+Add `inquirer` to your list of dependencies by running this code:
 
 ```bash
 npm i inquirer --save
