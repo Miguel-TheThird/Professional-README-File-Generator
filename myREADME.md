@@ -9,17 +9,15 @@ A easy to use README.md polished file generator will help you save time when the
 
 It includes all the important aspects that a good readme.md file should include, like licenses, description of your project, installation instructions, descriptions of how to use the application, contribution parties, a section to explain how to test it (if any), and how to reach you in case of any question arise.
 
-## Table of Contents
+## Table of Content
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Contributing](#Contributing)
-- [Test](#Test)
-- [Questions](#Questions)
+- [Contributor](#Contributor)
 
 ## Installation:
 
-Create a `package.json` with required dependencies by installing:
+Open yor terminal and create a `package.json` with required dependencies by installing:
 
 ```bash
 npm init -y
@@ -38,18 +36,8 @@ The application will be invoked by using the following command:
 node index.js
 ```
 
-## Test
+## Contributor:
 
-## Contributions:
-
- Miguel Ascencio
+ Miguel Ascencio: [Miguel-TheThird](https://github.com/Miguel-TheThird)
 
 
-
-
-
-Liscense (list) badge near the top, a note to explain which license the application is covered under
-
-Questions about the project: 
-- GutHub username
-- email

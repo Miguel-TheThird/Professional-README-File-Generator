@@ -40,7 +40,7 @@ inquirer.prompt([
     {
         name: "contributing",
         type: "input",
-        message: "Write names of contributors of this projects?"
+        message: "Write names of contributors for this projects?"
     },
     {
         name: "tests",
@@ -61,7 +61,7 @@ inquirer.prompt([
 
 .then((answers) => {
     fs.writeFile("readme.md","# "+answers.title+"\n"+"\n",(error)=>  //Create a .md file and attach project's name at the top
-    error ? console.log(error) : console.log("Yess"))
+    error ? console.log() : console.error())
 
     if(answers.license){
         let licenses = answers.license
@@ -71,40 +71,55 @@ inquirer.prompt([
 
     function continueRendering(){
     if(answers.description){
-        fs.appendFile("readme.md"," \n"+"\n"+"## Description"+"\n" + answers.description,(error)=>console.log(error))}
+        fs.appendFile("readme.md"," \n"+"\n"+"## Description"+"\n"+answers.description+"\n"+
+        "## Table of content"+"\n"+
+        "- [Description](#Description)"+"\n"+
+        "- [Installation](#Installation)"+"\n"+
+        "- [Usage](#Usage)"+"\n"+
+        "- [Test](#Test)"+"\n"+
+        "- [Contributors](#Contributors)"+"\n"+
+        "- [Email](#Email)"+"\n",(error)=>{if(error) throw err;})}
     
+    if(answers.installation){
+        fs.appendFile("readme.md"," \n"+"\n"+"## Installation"+"\n" + answers.installation,(error)=>{if(error) throw err;})}
     
+    if(answers.usage){
+        fs.appendFile("readme.md"," \n"+"\n"+"## Usage"+"\n" + answers.usage,(error)=>{if(error) throw err;})}
+
+    if(answers.contributing){
+        fs.appendFile("readme.md"," \n"+"\n"+"## Contributors"+"\n" + answers.contributing,(error)=>{if(error) throw err;})}
+
+    if(answers.tests){
+        fs.appendFile("readme.md"," \n"+"\n"+"## Test"+"\n" + answers.tests,(error)=>{if(error) throw err;})}
     
-    
-    
+    if(answers.questions){
+        fs.appendFile("readme.md"," \n"+"\n"+"## Questions"+"\n"+
+         "Find me on GitHub: " + "["+answers.questions+"]"+"(https://github.com/"+answers.questions+")",(error)=>{if(error) throw err;})}
 
-
-
-
-
-
-
+    if(answers.email){
+        fs.appendFile("readme.md"," \n"+"\n"+"## Email"+"\n"+
+        "["+answers.email+"]"+"(mailto:"+answers.email+")" ,(error)=>console.log("ReadMe file was made check your directory!"))}
 
 
 }});//The last brackets
  
 function getLicenses(licenses){
     if(licenses[0]){
-        fs.appendFile("readme.md", mitBadge,(error)=>console.log(error))}
+        fs.appendFile("readme.md", mitBadge+" ",(error)=>{if(error) throw err;})}
     if(licenses[1]){
-        fs.appendFile("readme.md", apacheBadge,(error)=>console.log(error))}
+        fs.appendFile("readme.md", apacheBadge+" ",(error)=>{if(error) throw err;})}
             
     if(licenses[2]){
-        fs.appendFile("readme.md", gnuBadge,(error)=>console.log(error))}
+        fs.appendFile("readme.md", gnuBadge+" ",(error)=>{if(error) throw err;})}
             
     if(licenses[3]){
-        fs.appendFile("readme.md", iscBadge,(error)=>console.log(error))}
+        fs.appendFile("readme.md", iscBadge+" ",(error)=>{if(error) throw err;})}
             
     if(licenses[4]){
-        fs.appendFile("readme.md", mozillaBadge,(error)=>console.log(error))}
+        fs.appendFile("readme.md", mozillaBadge+" ",(error)=>{if(error) throw err;})}
            
     if(licenses[5]){
-        fs.appendFile("readme.md", openDataBadge,(error)=>console.log(error))}
+        fs.appendFile("readme.md", openDataBadge+" ",(error)=>{if(error) throw err;})}
     }
 
 
